@@ -1,0 +1,151 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-texto-titulo: #FFF;
+  --color-texto-normal: #000;
+  --fuente-principal: arial;
+  --color-completado :rgba(87, 199, 133, 1);
+  --color-incompleto :rgb(125, 140, 146);
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  background: #2A7B9B;
+  background: linear-gradient(155deg, rgba(42, 123, 155, 1) 67%, rgba(87, 199, 133, 1) 100%);
+  background-repeat:no-repeat;
+  overflow:auto ;
+
+}
+
+main{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family:var(--fuente-principal);
+  gap:100px;
+}
+
+h1{
+  color:var(--color-texto-titulo);
+}
+
+.contenedor-formulario-tareas{
+  width: 700px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  gap:12px;
+}
+
+form{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:12px;
+}
+
+/* form-tarea-crear --> form-tarea-crear */
+
+#form-tarea-crear{
+  width: clamp(300px,100%,600px);
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+#form-tarea-crear input{
+  font-size:16px;
+  padding:8px;
+}
+
+#form-tarea-crear input:first-child{
+  width: 60%;
+}
+
+.contenedor-inputs-filtros select, .contenedor-inputs-filtros input{
+  padding: 8px;
+}
+
+.contenedor-tareas{
+  display:flex;
+  flex-direction: column;
+  gap:22px;
+  width: 80%;
+  overflow: auto;
+}
+
+.contenedor-tareas h2{
+  text-align: center;
+  color:var(--color-texto-titulo);
+}
+
+.item-tarea{
+  width: 100%;
+  border:1px solid black;
+  background-color:var(--color-texto-titulo);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:22px;
+  font-size:18px;
+}
+
+.item-tarea button{
+  font-size:18px;
+  padding:6px;
+}
+
+/* Estatus cumplimiento color de cada tarea */
+
+.completado{
+  background-color:var(--color-completado);
+}
+
+.incompleto{
+  background-color:var(--color-incompleto);
+}
+
+/* Estilos para las ventanas modales del boton de edicion de tareas */
+
+textarea #message-text{
+  height: 900px;
+  resize: none;
+}
+
+/* Estilos para mostra y ocultar tareas - Filtrado personalizado */
+.ocultar{
+  display:none;
+}
+
+.mostrar{
+  display:flex;
+}
+
+@media (width <= 800px){
+
+  main,body,html{
+    width: 100%;
+    overflow-x:hidden;
+  }
+
+  main{
+    padding:80px 0 0 0;
+  }
+
+  #form-tarea-crear{
+    width: 60%;
+  }
+
+}
